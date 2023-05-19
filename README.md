@@ -1,4 +1,4 @@
-# Spring 입문 학습 repository
+# Spring Boot 입문 학습 repository
 
 - Spring Boot를 사용하여 간단한 웹 어플리케이션 개발
 
