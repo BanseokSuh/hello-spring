@@ -13,7 +13,6 @@
 <br>
 
 ---
-
 # Note
 
 ## Spring Boot 프로젝트 생성
@@ -29,7 +28,6 @@
 - build.gradle (중요)
   - 버전 설정
   - 라이브러리 다운로드 주소
-
 <br>
 
 ## 프로젝트 실행
@@ -41,7 +39,6 @@
 - Preferences > Build, Execution, Deployment > Build Tools > Gradle
   - Build and run using: Gradle > IntelliJ IDEA
   - Run tests using: Gradle > IntelliJ IDEA
-
 <br>
 
 ## 라이브러리 의존
@@ -57,12 +54,26 @@
 - Test
   - junit5
   - assertj
-
 <br>
 
-
-
+## View 환경설정
+- Welcome Page
+  - Spring Boot에서는 static/index.html 파일로 Welcome Page를 제공
+- Thymeleaf 템플릿 엔진
+  - Controller에서 리턴 값으로 문자을 반환하면, view resolver가 문자에 해당하는 파일을 찾아 반환
+  - 파일 위치 : resources:templates/ + {ViewName} + .html
 <br>
+
+## Build
+- Terminal을 통해 프로젝트 root 디렉토리로 이동
+- <code>./gradlew build</code> -> 빌드
+- build/libs 디렉토리로 이동
+- <code>java -jar hello-spring-0.0.1-SNAPSHOT.jar</code> -> jar 파일 실행
+- 서버에 jar 파일만 넣고 <code>java -jar jar파일.jar</code> 명령어로 실행시키면 배포됨
+- 잘 안 되면 <code>./gradlew clean build</code> -> 이전 빌드 폴더가 사라짐
+- 
+
+
 <br>
 <br>
 <br>
