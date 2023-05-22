@@ -1,7 +1,5 @@
 # Spring Boot 입문 학습 repository
-
 - Spring Boot를 사용하여 간단한 웹 어플리케이션 개발
-
 - 사용 기술
   - Spring Boot
   - JPA
@@ -71,8 +69,7 @@
 ## 정적 컨텐츠
 - 웹 브라우저에서 localhost:8080/hello-static.html 요청이 들어오면,
 - 컨트롤러에서 먼저 hello-static과 매핑된 메서드가 있는지 확인한다. (컨트롤러가 우선순위를 갖는다)
-- 없으면 resources:static/hello-static.html 파일을 찾아 파일 자체를 브라우저로 리턴함 
-<br>
+- 없으면 resources:static/hello-static.html 파일을 찾아 파일 자체를 브라우저로 리턴함
 
 ## MVC와 템플릿 엔진
 - MVC: Model, View, Controller
