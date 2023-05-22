@@ -77,6 +77,7 @@
 - 웹 브라우저에서 localhost:8080/hello-static.html 요청이 들어오면,
 - 컨트롤러에서 먼저 hello-static과 매핑된 메서드가 있는지 확인한다. (컨트롤러가 우선순위를 갖는다)
 - 없으면 resources:static/hello-static.html 파일을 찾아 파일 자체를 브라우저로 리턴함 
+<br>
 
 ## MVC와 템플릿 엔진
 - MVC: Model, View, Controller
