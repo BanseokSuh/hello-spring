@@ -28,7 +28,6 @@
 - build.gradle (중요)
   - 버전 설정
   - 라이브러리 다운로드 주소
-<br>
 
 ## 프로젝트 실행
 - src > main > java 디렉토리에 있는 HelloSpringApplication.java에서 main 메서드 실행
@@ -39,7 +38,6 @@
 - Preferences > Build, Execution, Deployment > Build Tools > Gradle
   - Build and run using: Gradle > IntelliJ IDEA
   - Run tests using: Gradle > IntelliJ IDEA
-<br>
 
 ## 라이브러리 의존
 - 라이브러리A에 대한 의존성을 주입받으면, A가 의존하고 있는 다른 라이브러리들도 주입받게 됨
@@ -54,7 +52,6 @@
 - Test
   - junit5
   - assertj
-<br>
 
 ## View 환경설정
 - Welcome Page
@@ -62,7 +59,6 @@
 - Thymeleaf 템플릿 엔진
   - Controller에서 리턴 값으로 문자을 반환하면, view resolver가 문자에 해당하는 파일을 찾아 반환
   - 파일 위치 : resources:templates/ + {ViewName} + .html
-<br>
 
 ## Build
 - Terminal을 통해 프로젝트 root 디렉토리로 이동
@@ -71,7 +67,6 @@
 - <code>java -jar hello-spring-0.0.1-SNAPSHOT.jar</code> -> jar 파일 실행
 - 서버에 jar 파일만 넣고 <code>java -jar jar파일.jar</code> 명령어로 실행시키면 배포됨
 - 잘 안 되면 <code>./gradlew clean build</code> -> 이전 빌드 폴더가 사라지고 새로 빌드됨
-<br>
 
 ## 정적 컨텐츠
 - 웹 브라우저에서 localhost:8080/hello-static.html 요청이 들어오면,
@@ -91,6 +86,15 @@
 - ViewResolver: view를 찾아주고 템플릿 엔진을 연결해줌
 - 템플릿 엔진이 model을 변환 후, 변환된 파일을 웹 브라우저로 리턴함
 
+## API
+- @ResponseBody: 리턴 데이터를 http response의 body부에 그대로 넣어주겠다는 의미
+- class A 안에 static class B를 만들면 A.B 방식의 chaining 문법을 사용할 수 있음
+- @ResponseBody가 있으면 viewResolver 대신 HttpMessageConverter가 동작함
+- 리턴 데이터가 단순 문자열이면 StringHttpMessageConverter가 동작, 객체이면 MappingJackson2HttpMessageConverter가 동작함
+- Jackson: 객체를 Json으로 바꿔주는 라이브러리
+
 <br>
 <br>
-<br>
+
+
+[//]: # (노트:2-3 / 강의:2-3)
