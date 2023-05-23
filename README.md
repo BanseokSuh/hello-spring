@@ -105,6 +105,28 @@
 - Jackson: 객체를 Json으로 바꿔주는 라이브러리
 
 <br>
+
+## 회원 관리 예제
+- 일반적 웹 어플리케이션 계층 구조
+
+  <img src="https://github.com/BanseokSuh/hello-spring/assets/62047302/fc039367-7c3b-41d2-828a-954c0f277058" />
+
+  - 컨트롤러: 라우팅의 역할
+  - 서비스: 핵심 비즈니스 로직
+  - 리포지토리: 도메인 객체를 DB로 옮겨줌
+  - 도메인: 회원, 주문, 쿠폰 등 주로 DB에 저장 및 관리되는 비즈니스 도메인 객체
+
+- Optional<>: 데이터 조회 시 null일수도 있는 경우 Optional로 감싸서 리턴
+- ConcurrentHashMap: 공유되는 변수일 경우에는 동시성 문제가 있어서 실무에서는 HashMap보단 ConcurrentHashMap을 사용
+- AtomicLong: 동시성 문제로 long보단 AtomicLong 사용
+- null이 반환될 가능성이 있으면 Optional.ofNullable()로 감싸서 리턴
+- Assertions.assertEquals(expected, actual)은 테스트 시 실제값과 기대값이 같은지 확인해주는 메서드
+- Member result = repository.findByName("spring1").get();
+  - .get()을 뒤에 붙이면 Optional을 한꺼풀 벗겨내서 값을 가져올 수 있음
+- @AfterEach는 테스트 클래스의 각 테스트 메서드가 끝나면 실행할 함수를 정의
+- 테스트는 의존관계 없이 설계되어야 함
+- 
+
 <br>
 
 
