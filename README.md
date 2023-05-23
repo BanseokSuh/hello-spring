@@ -27,6 +27,8 @@
   - 버전 설정
   - 라이브러리 다운로드 주소
 
+<br>
+
 ## 프로젝트 실행
 - src > main > java 디렉토리에 있는 HelloSpringApplication.java에서 main 메서드 실행
 - Tomcat started on port(s): 8080 (http)
@@ -36,6 +38,8 @@
 - Preferences > Build, Execution, Deployment > Build Tools > Gradle
   - Build and run using: Gradle > IntelliJ IDEA
   - Run tests using: Gradle > IntelliJ IDEA
+
+<br>
 
 ## 라이브러리 의존
 - 라이브러리A에 대한 의존성을 주입받으면, A가 의존하고 있는 다른 라이브러리들도 주입받게 됨
@@ -51,12 +55,16 @@
   - junit5
   - assertj
 
+<br>
+
 ## View 환경설정
 - Welcome Page
   - Spring Boot에서는 static/index.html 파일로 Welcome Page를 제공
 - Thymeleaf 템플릿 엔진
   - Controller에서 리턴 값으로 문자을 반환하면, view resolver가 문자에 해당하는 파일을 찾아 반환
   - 파일 위치 : resources:templates/ + {ViewName} + .html
+
+<br>
 
 ## Build
 - Terminal을 통해 프로젝트 root 디렉토리로 이동
@@ -66,10 +74,14 @@
 - 서버에 jar 파일만 넣고 <code>java -jar jar파일.jar</code> 명령어로 실행시키면 배포됨
 - 잘 안 되면 <code>./gradlew clean build</code> -> 이전 빌드 폴더가 사라지고 새로 빌드됨
 
+<br>
+
 ## 정적 컨텐츠
 - 웹 브라우저에서 localhost:8080/hello-static.html 요청이 들어오면,
 - 컨트롤러에서 먼저 hello-static과 매핑된 메서드가 있는지 확인한다. (컨트롤러가 우선순위를 갖는다)
 - 없으면 resources:static/hello-static.html 파일을 찾아 파일 자체를 브라우저로 리턴함
+
+<br>
 
 ## MVC와 템플릿 엔진
 - MVC: Model, View, Controller
@@ -82,6 +94,8 @@
 - Controller는 ViewResolver에 model을 던짐
 - ViewResolver: view를 찾아주고 템플릿 엔진을 연결해줌
 - 템플릿 엔진이 model을 변환 후, 변환된 파일을 웹 브라우저로 리턴함
+
+<br>
 
 ## API
 - @ResponseBody: 리턴 데이터를 http response의 body부에 그대로 넣어주겠다는 의미
