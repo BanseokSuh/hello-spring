@@ -122,12 +122,63 @@
 - null이 반환될 가능성이 있으면 Optional.ofNullable()로 감싸서 리턴
 - Assertions.assertEquals(expected, actual)은 테스트 시 실제값과 기대값이 같은지 확인해주는 메서드
 - Member result = repository.findByName("spring1").get();
-  - .get()을 뒤에 붙이면 Optional을 한꺼풀 벗겨내서 값을 가져올 수 있음
+  - .get()을 뒤에 붙이면 Optional을 한꺼풀 벗겨내서  값을 가져올 수 있음
 - @AfterEach는 테스트 클래스의 각 테스트 메서드가 끝나면 실행할 함수를 정의
 - 테스트는 의존관계 없이 설계되어야 함
-- 
 
 <br>
+
+## 회원 서비스, 테스트
+- Repository에서는 개발에 가까운 용어를 사용
+- Service에서는 비즈니스에 가까운 용어를 사용
+- 테스트는 한글로 적어도 무방함. 빌드될 때 테스트 코드는 빌드되지 않음
+- given: 뭔가가 주어졌을 때
+- when: 이렇게 했더니
+- then: 이렇게 되었다
+- 테스트는 정상 플로우도 중요하지만 예외 플로우도 중요. 예외에 대한 테스트도 생성 
+- assertThrows(A, B): B로직을 실행하면 A에러가 터져야 해!
+- control + R : 이전에 실행했던 테스트 재실행
+
+<br>
+
+## DI (Dependency Injection)
+- MemberService와 MemberServiceTest에서 각각 memberRepository 인스턴스를 생성하면 서로 다른 repository 인스턴스를 사용하게 됨
+- 같은 인스턴스를 사용하도록 해줘야 함
+
+```java
+class MemberServiceTest {
+
+    MemberService memberService;
+    MemoryMemberRepository memberRepository;
+
+    @BeforeEach
+    public void beforeEach() {
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
+    ...
+}
+```
+
+```java
+public class MemberService {
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    ...
+}
+```
+
+- MemberService에서 new로 직접 memberRepository를 생성하는 것이 아니라 외부에서 넣어주도록 변경
+- @BeforeEach로 매 테스트 직전에 repository를 new로 생성하고,
+- new로 service를 생성할 때 인자로 방금 생성한 repository를 넣어줌 -> service에서는 주입받은 repository를 사용하게 됨
+- memberService 입장에서 보면 직접 new로 repository를 생성하지 않고 외부에서 주입받음 -> <strong>의존성 주입(Dependency Injection)이라고 함</strong>
+
+<br>
+
+
 
 
 [//]: # (노트:2-3 / 강의:2-3)
