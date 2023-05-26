@@ -178,6 +178,14 @@ public class MemberService {
 
 <br>
 
+## 의존성 주입
+- 스프링 빈 등록 방법
+  - 컴포넌트 스캔 방식
+    - @Controller, @Service, @Repository에는 모두 @Component가 붙어 있음
+    - @Component을 포함하는 어노테이션은 스프링 빈으로 자동 등록됨
+    - hello.hellospring 패키지에 포함된 파일들에 한해서 컴포너트 스캔이 이루어짐
+    - 스프링은 스프링 빈을 등록할 때 싱글톤으로 등록함. 하나만 등록하고 공유함.
+  - 자동 의존 관계 설정
 
 
 
