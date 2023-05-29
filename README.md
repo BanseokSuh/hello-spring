@@ -205,7 +205,14 @@ public class MemberService {
       };
       ```
     - @Autowired는 Spring이 관리해주는 객체에서만 동작 (Spring Bean으로 등록되어있지 않으면 @Autowired 동작하지 않음)
-    
+
+<br>
+
+## 리턴 우선순위
+- http 요청 시 스프링 컨테이너 내부에 매핑되어 있는 Controller를 찾음
+- 없으면 static 폴더의 파일을 찾음
+- 해당 컨트롤러를 제거하면 static 폴더의 index.html를 잦음
+
 
 
 [//]: # (노트:2-3 / 강의:2-3)
