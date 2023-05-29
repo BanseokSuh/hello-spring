@@ -208,11 +208,19 @@ public class MemberService {
 
 <br>
 
-## 리턴 우선순위
-- http 요청 시 스프링 컨테이너 내부에 매핑되어 있는 Controller를 찾음
+## 회원 관련 기능
+### 리턴 우선 순위
+- http 요청 시 먼저는 스프링 컨테이너 내부에 매핑되어 있는 Controller를 찾음
 - 없으면 static 폴더의 파일을 찾음
 - 해당 컨트롤러를 제거하면 static 폴더의 index.html를 잦음
 
+<br>
 
+### 등록 관련
+- post 요청 시 input 태그에서 name에 해당하는 값이 서버로 전달되는 key
+
+<br>
+
+### 
 
 [//]: # (노트:2-3 / 강의:2-3)
