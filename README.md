@@ -185,8 +185,27 @@ public class MemberService {
     - @Component을 포함하는 어노테이션은 스프링 빈으로 자동 등록됨
     - hello.hellospring 패키지에 포함된 파일들에 한해서 컴포너트 스캔이 이루어짐
     - 스프링은 스프링 빈을 등록할 때 싱글톤으로 등록함. 하나만 등록하고 공유함.
-  - 자동 의존 관계 설정
-
+  - 스프링 빈 직접 등록
+    - 상황에 따라 구현 클래스를 변경해야 할 경우 사용
+    - 예를 들어, 아직 데이터 저장소가 선정되지 않아 우선 인터페이스로 구현 클래스를 변경할 수 있도록 설계했을 경우에 스프링 빈을 직접 등록하는 것이 유용함
+      ```java
+      @Bean
+      public MemberSevice memberService() {
+          return new MemberService(memberRepository());
+      };
+      
+      
+      /*
+        "MemoryMemberRepository" -> "DbMemberRepository"
+        위와 같이 수정하면 다른 코드 수정 없이 구현체를 변경할 수 있음
+      */
+      @Bean
+      public MemberRepository memberRepository() {
+          return new MemoryMemberRepository();
+      };
+      ```
+    - @Autowired는 Spring이 관리해주는 객체에서만 동작 (Spring Bean으로 등록되어있지 않으면 @Autowired 동작하지 않음)
+    
 
 
 [//]: # (노트:2-3 / 강의:2-3)
